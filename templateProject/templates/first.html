@@ -1,0 +1,28 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/first.css' %}">
+    <title>ajay</title>
+
+    <script src="{% static 'js/first.js' %}"></script>
+
+</head>
+<body>
+    {% load cust_filters %}
+    <h4 id="demo" >welcome to django</h4>
+    <h3 class="test">Heloo</h3>
+    <img src="{% static 'img/pic2.jpg' %}" alt="this is image"/>
+    {% for student in student_list %}
+        {{student.name|title}}
+        {{student.marks}}
+        {{student.country|add:"Pvt Ltd"}}
+        {{student.name|truncate4}}
+        {{student.name|t_n:2}}
+
+    {% endfor%}
+
+</body>
+</html>
